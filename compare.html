@@ -1,0 +1,122 @@
+<!-- compare.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>比較表｜AIのふたつの個性</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Noto Sans JP','sans-serif'], round: ['Zen Maru Gothic','sans-serif'] },
+    colors: { cream:'#FBF8F2', sage:'#6E8F79', sageLight:'#E8EFE7', sageDeep:'#4B6656', ink:'#3F3B36', clay:'#C98B5E' }
+  }}
+}
+</script>
+<style>body{background-color:#FBF8F2;color:#3F3B36;} .soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);} .navlink.active{color:#4B6656;font-weight:700;}</style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold">A</span>
+      <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
+    </a>
+    <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
+      <a href="index.html" class="navlink hover:text-sageDeep transition-colors">はじめに</a>
+      <a href="gpt-5.6.html" class="navlink hover:text-sageDeep transition-colors">GPT-5.6ファミリー</a>
+      <a href="fable-5.html" class="navlink hover:text-sageDeep transition-colors">Claude Fable 5</a>
+      <a href="compare.html" class="navlink active hover:text-sageDeep transition-colors">比較表</a>
+      <a href="news.html" class="navlink hover:text-sageDeep transition-colors">お知らせ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
+  <h1 class="text-2xl md:text-3xl font-round font-bold text-ink">かんたん比較表</h1>
+  <p class="text-ink/60 text-sm mt-3">公開されているベンチマーク（TerminalBench 2.1）と料金をもとにまとめました。</p>
+</header>
+
+<section class="max-w-6xl mx-auto px-6 py-6">
+  <div class="bg-white rounded-2xl soft-shadow border border-sage/10 overflow-hidden mb-6">
+    <table class="w-full text-left text-sm">
+      <thead>
+        <tr class="bg-sageLight text-sageDeep font-round text-xs uppercase tracking-wide">
+          <th class="py-4 px-6">モデル名</th>
+          <th class="py-4 px-6">開発元</th>
+          <th class="py-4 px-6">TerminalBench 2.1</th>
+          <th class="py-4 px-6">料金（入力／出力・100万トークン）</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-sage/10">
+        <tr>
+          <td class="py-4 px-6 font-bold text-ink">GPT-5.6 Sol Ultra</td>
+          <td class="py-4 px-6 text-ink/60">OpenAI</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">91.9%</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">Solと同じ課金体系（要確認）</td>
+        </tr>
+        <tr>
+          <td class="py-4 px-6 font-bold text-ink">GPT-5.6 Sol</td>
+          <td class="py-4 px-6 text-ink/60">OpenAI</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">88.8%</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">$5 ／ $30</td>
+        </tr>
+        <tr class="bg-sageLight/40">
+          <td class="py-4 px-6 font-bold text-sageDeep">Claude Mythos 5</td>
+          <td class="py-4 px-6 text-ink/60">Anthropic（限定提供）</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">88.0%</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">$10 ／ $50</td>
+        </tr>
+        <tr class="bg-sageLight/40">
+          <td class="py-4 px-6 font-bold text-sageDeep">Claude Fable 5</td>
+          <td class="py-4 px-6 text-ink/60">Anthropic</td>
+          <td class="py-4 px-6 text-ink/60">（同モデル・数値未公表）</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">$10 ／ $50</td>
+        </tr>
+        <tr>
+          <td class="py-4 px-6 font-bold text-ink">GPT-5.6 Terra</td>
+          <td class="py-4 px-6 text-ink/60">OpenAI</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">84.3%</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">$2.5 ／ $15</td>
+        </tr>
+        <tr>
+          <td class="py-4 px-6 font-bold text-ink">GPT-5.6 Luna</td>
+          <td class="py-4 px-6 text-ink/60">OpenAI</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">82.5%</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">$1 ／ $6</td>
+        </tr>
+        <tr>
+          <td class="py-4 px-6 font-bold text-ink">Claude Opus 4.8（参考）</td>
+          <td class="py-4 px-6 text-ink/60">Anthropic</td>
+          <td class="py-4 px-6 text-ink/60 font-mono">78.9%</td>
+          <td class="py-4 px-6 text-ink/60">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-ink/40 text-center">※TerminalBench 2.1のスコアはOpenAIの発表資料に基づく数値です。両社の発表元が異なるため、測定条件が同一でない可能性があります。</p>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <div class="bg-white rounded-2xl soft-shadow border border-sage/10 p-10">
+    <h2 class="font-round font-bold text-ink text-lg mb-4">ざっくり言うと</h2>
+    <p class="text-ink/70 text-sm leading-loose">
+      コマンドライン操作のベンチマークだけを見ると、GPT-5.6 Sol（特にSol Ultra）がやや優位に見えますが、Claude Fable 5は数日間にわたる自律的なコーディング作業や、視覚認識、長期記憶を使った作業で強みを発揮しています。どちらも登場からまだ間もなく、提供範囲や機能は今後も更新されていく見込みです。
+    </p>
+  </div>
+</section>
+
+<footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
+    <div class="flex gap-6 text-xs text-ink/50">
+      <a href="news.html" class="hover:text-sageDeep transition-colors">お知らせ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIのふたつの個性 ― GPT-5.6ファミリーとClaude Fable 5のご案内</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Noto Sans JP','sans-serif'], round: ['Zen Maru Gothic','sans-serif'] },
+    colors: { cream:'#FBF8F2', sage:'#6E8F79', sageLight:'#E8EFE7', sageDeep:'#4B6656', ink:'#3F3B36', clay:'#C98B5E' }
+  }}
+}
+</script>
+<style>
+body{background-color:#FBF8F2;color:#3F3B36;}
+.soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);}
+.navlink.active{color:#4B6656;font-weight:700;}
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold">A</span>
+      <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
+    </a>
+    <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
+      <a href="index.html" class="navlink active hover:text-sageDeep transition-colors">はじめに</a>
+      <a href="gpt-5.6.html" class="navlink hover:text-sageDeep transition-colors">GPT-5.6ファミリー</a>
+      <a href="fable-5.html" class="navlink hover:text-sageDeep transition-colors">Claude Fable 5</a>
+      <a href="compare.html" class="navlink hover:text-sageDeep transition-colors">比較表</a>
+      <a href="news.html" class="navlink hover:text-sageDeep transition-colors">お知らせ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="inline-block text-xs font-round font-bold text-sage bg-sageLight px-3 py-1 rounded-full mb-4">2026年6月〜7月 実在モデルのご紹介</span>
+      <h1 class="text-3xl md:text-4xl font-round font-bold text-ink leading-relaxed mb-5">
+        そっと寄り添う、<br>これからの人工知能のお話。
+      </h1>
+      <p class="text-ink/70 leading-loose text-[15px]">
+        OpenAIの「GPT-5.6」ファミリー（Sol・Terra・Luna）と、Anthropicの「Claude Fable 5 / Mythos 5」。
+        どちらも2026年6月に発表された、実際に存在する最新世代のモデルです。
+        公開されている一次情報をもとに、それぞれの個性や得意なことを、できるだけやさしい言葉でご紹介いたします。
+      </p>
+    </div>
+    <div class="rounded-3xl overflow-hidden soft-shadow bg-gradient-to-br from-sageLight to-white p-10 flex flex-col items-center justify-center text-center border border-sage/10">
+      <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center soft-shadow mb-4">
+        <span class="text-2xl">🌿</span>
+      </div>
+      <p class="font-round text-sageDeep font-bold text-lg mb-1">やさしく、ていねいに。</p>
+      <p class="text-ink/60 text-sm">むずかしい専門用語は、できるだけ噛みくだいてお伝えします。</p>
+    </div>
+  </div>
+</header>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <div class="bg-white rounded-3xl soft-shadow border border-sage/10 p-10 md:p-14 grid md:grid-cols-3 gap-10">
+    <div class="md:col-span-2">
+      <h2 class="text-xl font-round font-bold text-sageDeep mb-5">はじめに</h2>
+      <p class="text-ink/75 leading-loose text-[15px] mb-4">
+        AIという言葉を耳にする機会が、ずいぶん増えたように思います。仕事の相談相手として、あるいは創作のパートナーとして、日々の暮らしにそっと寄り添ってくれる存在へと育ってきました。
+      </p>
+      <p class="text-ink/75 leading-loose text-[15px] mb-4">
+        このページでは、2026年6月に発表された二つの大きな流れ、OpenAIの「GPT-5.6」ファミリーと、Anthropicの「Claude Fable 5 / Mythos 5」について、公式発表などをもとにまとめています。
+      </p>
+      <p class="text-ink/75 leading-loose text-[15px]">
+        どちらも登場からまだ間もなく、提供範囲が段階的に広がっている最中のモデルです。どちらが優れているというより、それぞれに合った使い方があります。のんびりご覧いただけたら嬉しいです。
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center bg-sageLight rounded-2xl p-6">
+      <span class="text-4xl mb-3">🤝</span>
+      <p class="text-sageDeep font-round font-bold text-sm text-center">案内人：AIのふたつの個性 編集部</p>
+      <p class="text-ink/50 text-xs text-center mt-2">2026年7月 作成・公開情報をもとに構成</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-2xl font-round font-bold text-ink text-center mb-10">ふたつのモデル、それぞれのお話</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <a href="gpt-5.6.html" class="block bg-white rounded-2xl soft-shadow border border-sage/10 p-10 hover:-translate-y-1 transition-transform duration-300">
+      <span class="text-xs font-round font-bold text-clay bg-clay/10 px-3 py-1 rounded-full">OpenAI</span>
+      <h3 class="text-xl font-round font-bold text-ink mt-4 mb-3">GPT-5.6ファミリー（Sol・Terra・Luna）</h3>
+      <p class="text-ink/60 text-sm leading-relaxed mb-4">
+        2026年6月26日発表。目的に応じて選べる3段階構成で、最上位のSolはコーディングや科学分野で新記録を出しています。
+      </p>
+      <span class="text-sage text-sm font-round font-bold">くわしく見る →</span>
+    </a>
+    <a href="fable-5.html" class="block bg-white rounded-2xl soft-shadow border border-sage/10 p-10 hover:-translate-y-1 transition-transform duration-300">
+      <span class="text-xs font-round font-bold text-sage bg-sageLight px-3 py-1 rounded-full">Anthropic</span>
+      <h3 class="text-xl font-round font-bold text-ink mt-4 mb-3">Claude Fable 5 / Mythos 5</h3>
+      <p class="text-ink/60 text-sm leading-relaxed mb-4">
+        2026年6月9日発表。長時間にわたる自律作業を得意とする「Mythos級」のモデルで、7月1日に再展開されました。
+      </p>
+      <span class="text-sage text-sm font-round font-bold">くわしく見る →</span>
+    </a>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <div class="bg-sageLight rounded-2xl p-8 border border-sage/10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h2 class="font-round font-bold text-sageDeep text-lg mb-2">比較表もご用意しています</h2>
+      <p class="text-ink/60 text-sm">料金やベンチマークの数値を、ひと目で見比べられる表にまとめました。</p>
+    </div>
+    <a href="compare.html" class="shrink-0 px-6 py-3 rounded-full text-sm font-round font-bold bg-sage text-white hover:bg-sageDeep transition-colors">比較表を見る</a>
+  </div>
+</section>
+
+<footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
+    <div class="flex gap-6 text-xs text-ink/50">
+      <a href="news.html" class="hover:text-sageDeep transition-colors">お知らせ</a>
+      <a href="compare.html" class="hover:text-sageDeep transition-colors">比較表</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

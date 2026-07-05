@@ -1,0 +1,79 @@
+<!-- news.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ｜AIのふたつの個性</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Noto Sans JP','sans-serif'], round: ['Zen Maru Gothic','sans-serif'] },
+    colors: { cream:'#FBF8F2', sage:'#6E8F79', sageLight:'#E8EFE7', sageDeep:'#4B6656', ink:'#3F3B36', clay:'#C98B5E' }
+  }}
+}
+</script>
+<style>body{background-color:#FBF8F2;color:#3F3B36;} .soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);} .navlink.active{color:#4B6656;font-weight:700;}</style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold">A</span>
+      <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
+    </a>
+    <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
+      <a href="index.html" class="navlink hover:text-sageDeep transition-colors">はじめに</a>
+      <a href="gpt-5.6.html" class="navlink hover:text-sageDeep transition-colors">GPT-5.6ファミリー</a>
+      <a href="fable-5.html" class="navlink hover:text-sageDeep transition-colors">Claude Fable 5</a>
+      <a href="compare.html" class="navlink hover:text-sageDeep transition-colors">比較表</a>
+      <a href="news.html" class="navlink active hover:text-sageDeep transition-colors">お知らせ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
+  <h1 class="text-2xl md:text-3xl font-round font-bold text-ink">お知らせ・これまでの経緯</h1>
+  <p class="text-ink/60 text-sm mt-3">2026年、両モデルにまつわる主な出来事を時系列でまとめました。</p>
+</header>
+
+<section class="max-w-4xl mx-auto px-6 py-6 pb-20">
+  <div class="space-y-4">
+    <div class="bg-white rounded-xl soft-shadow border border-sage/10 p-5 flex gap-4 items-start">
+      <span class="text-xs font-round text-sage bg-sageLight px-3 py-1 rounded-full shrink-0">2026.07.01</span>
+      <p class="text-ink/70 text-sm">Claude Fable 5 / Mythos 5が世界的に再展開されました。Anthropicは業界横断でのジェイルブレイク深刻度の評価基準づくりも提案しています。</p>
+    </div>
+    <div class="bg-white rounded-xl soft-shadow border border-sage/10 p-5 flex gap-4 items-start">
+      <span class="text-xs font-round text-clay bg-clay/10 px-3 py-1 rounded-full shrink-0">2026.06.26</span>
+      <p class="text-ink/70 text-sm">OpenAIがGPT-5.6 Sol・Terra・Lunaを発表。米国政府との調整により、当初は限定パートナーへの提供となりました。</p>
+    </div>
+    <div class="bg-white rounded-xl soft-shadow border border-sage/10 p-5 flex gap-4 items-start">
+      <span class="text-xs font-round text-sage bg-sageLight px-3 py-1 rounded-full shrink-0">2026.06.12</span>
+      <p class="text-ink/70 text-sm">Claude Fable 5 / Mythos 5へのアクセスが一時停止されました。Anthropicは復旧に向けて対応を進めていると発表しました。</p>
+    </div>
+    <div class="bg-white rounded-xl soft-shadow border border-sage/10 p-5 flex gap-4 items-start">
+      <span class="text-xs font-round text-sage bg-sageLight px-3 py-1 rounded-full shrink-0">2026.06.09</span>
+      <p class="text-ink/70 text-sm">AnthropicがClaude Fable 5とClaude Mythos 5を発表。Fable 5は一般向けに安全対策を施したモデル、Mythos 5はサイバー防衛関係者向けに制限をゆるめたモデルとして提供されました。</p>
+    </div>
+    <div class="bg-white rounded-xl soft-shadow border border-sage/10 p-5 flex gap-4 items-start">
+      <span class="text-xs font-round text-clay bg-clay/10 px-3 py-1 rounded-full shrink-0">2026.04</span>
+      <p class="text-ink/70 text-sm">Anthropicが「Project Glasswing」を通じてMythos-class モデルの初期版（Claude Mythos Preview）を、限定されたサイバー防衛関係者に提供開始しました。</p>
+    </div>
+  </div>
+  <p class="text-xs text-ink/40 text-center mt-8">※本ページの日付・内容は各社の公式発表や報道記事をもとにまとめたものです。今後さらに更新される可能性があります。</p>
+</section>
+
+<footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
+    <div class="flex gap-6 text-xs text-ink/50">
+      <a href="index.html" class="hover:text-sageDeep transition-colors">トップへ戻る</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

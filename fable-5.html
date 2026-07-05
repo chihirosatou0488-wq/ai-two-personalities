@@ -1,0 +1,98 @@
+<!-- fable-5.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Fable 5 / Mythos 5｜AIのふたつの個性</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Noto Sans JP','sans-serif'], round: ['Zen Maru Gothic','sans-serif'] },
+    colors: { cream:'#FBF8F2', sage:'#6E8F79', sageLight:'#E8EFE7', sageDeep:'#4B6656', ink:'#3F3B36', clay:'#C98B5E' }
+  }}
+}
+</script>
+<style>body{background-color:#FBF8F2;color:#3F3B36;} .soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);} .navlink.active{color:#4B6656;font-weight:700;}</style>
+</head>
+<body class="font-sans antialiased">
+
+<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold">A</span>
+      <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
+    </a>
+    <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
+      <a href="index.html" class="navlink hover:text-sageDeep transition-colors">はじめに</a>
+      <a href="gpt-5.6.html" class="navlink hover:text-sageDeep transition-colors">GPT-5.6ファミリー</a>
+      <a href="fable-5.html" class="navlink active hover:text-sageDeep transition-colors">Claude Fable 5</a>
+      <a href="compare.html" class="navlink hover:text-sageDeep transition-colors">比較表</a>
+      <a href="news.html" class="navlink hover:text-sageDeep transition-colors">お知らせ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
+  <span class="text-xs font-round font-bold text-sage bg-sageLight px-3 py-1 rounded-full">Anthropic・2026年6月9日発表</span>
+  <h1 class="text-3xl md:text-4xl font-round font-bold text-ink mt-5 mb-4">じっくり付き添う、Claude Fable 5</h1>
+  <p class="max-w-2xl mx-auto text-ink/70 text-sm leading-relaxed">
+    Claude Fable 5は、Anthropicが「Mythos級」と呼ぶ、これまでで最も高い能力を持つモデルを、安全に一般公開できるよう調整したものです。
+    同時に、同じ基盤モデルの制限をゆるめた「Claude Mythos 5」も、限られた協力先にのみ提供されています。
+  </p>
+</header>
+
+<section class="max-w-6xl mx-auto px-6 py-10">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white rounded-2xl soft-shadow border border-sage/10 p-10">
+      <h3 class="font-round font-bold text-ink text-lg mb-4">どんな性格？</h3>
+      <p class="text-ink/70 text-sm leading-loose mb-4">
+        細かい指示をすべて待つのではなく、長時間にわたる作業をひとりで進めてくれるのが特徴です。実際にStripe社では、5000万行規模のRubyコードベースの移行作業を、通常なら開発チームで2ヶ月かかるところを1日で終えたと報告されています。
+      </p>
+      <p class="text-ink/70 text-sm leading-loose">
+        画面の情報だけでポケモンファイアレッドを最後までプレイしきったり、自分でメモを取りながら長いゲーム（Slay the Spire）を進めたりと、視覚認識と記憶の力でも高い評価を得ています。
+      </p>
+    </div>
+    <div class="bg-sageLight rounded-2xl p-10 border border-sage/10">
+      <h3 class="font-round font-bold text-sageDeep text-lg mb-4">安心して使える工夫</h3>
+      <p class="text-ink/70 text-sm leading-loose mb-4">
+        自律的に動く分、思わぬ使われ方をしないよう、サイバーセキュリティ・生物化学・不正な模倣（distillation）に関わる問い合わせは、自動的により制限の少ない前モデル「Opus 4.8」が代わりに答える仕組みになっています。
+      </p>
+      <p class="text-ink/70 text-sm leading-loose">
+        この仕組みが働くのは全体の5%未満とされ、残り95%以上のやりとりでは、Fable 5本来の力がそのまま発揮されます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <div class="bg-white rounded-2xl soft-shadow border border-sage/10 p-10 md:p-14">
+    <h2 class="text-xl font-round font-bold text-sageDeep mb-5">研究の現場でも</h2>
+    <p class="text-ink/70 text-sm leading-loose mb-4">
+      同じ基盤モデルの「Mythos 5」は、サイバー防衛の専門家や一部の生命科学研究者にのみ提供されています。タンパク質の設計プロセスを約10倍加速させたり、138種の動物にまたがる単一細胞データを使って新しい機械学習モデルを自律的に作り上げたりと、科学研究の分野でも成果が報告されています。
+    </p>
+    <p class="text-ink/50 text-xs mt-6">料金：Fable 5 / Mythos 5ともに入力$10／出力$50（100万トークンあたり）。Claude.ai、Claude Code、APIから利用できます。</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-10 pb-20">
+  <div class="bg-sageLight rounded-2xl p-8 border border-sage/10 text-center">
+    <p class="text-ink/60 text-sm">Fable 5は発表後の6月12日に一時的にアクセスができなくなりましたが、2026年7月1日に世界的に再展開されました。くわしい経緯は「お知らせ」ページをご覧ください。</p>
+    <a href="news.html" class="inline-block mt-4 text-sage font-round font-bold text-sm hover:text-sageDeep">お知らせページへ →</a>
+  </div>
+</section>
+
+<footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
+    <div class="flex gap-6 text-xs text-ink/50">
+      <a href="gpt-5.6.html" class="hover:text-sageDeep transition-colors">GPT-5.6を見る</a>
+      <a href="compare.html" class="hover:text-sageDeep transition-colors">比較表</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
