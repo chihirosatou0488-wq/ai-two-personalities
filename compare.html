@@ -4,6 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GPT-5.6ファミリーとClaude Fable 5 / Mythos 5の料金・ベンチマークをひと目で比較できる表です。">
+<meta name="theme-color" content="#6E8F79">
+<meta property="og:type" content="website">
+<meta property="og:title" content="比較表｜AIのふたつの個性">
+<meta property="og:description" content="GPT-5.6ファミリーとClaude Fable 5 / Mythos 5の料金・ベンチマークをひと目で比較できる表です。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+
 <title>比較表｜AIのふたつの個性</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -15,14 +24,24 @@ tailwind.config = {
   }}
 }
 </script>
-<style>body{background-color:#FBF8F2;color:#3F3B36;} .soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);} .navlink.active{color:#4B6656;font-weight:700;}</style>
+<style>body{background-color:#FBF8F2;color:#3F3B36;} .soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);} .navlink.active{color:#4B6656;font-weight:700;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+a:focus-visible,button:focus-visible{outline:2px solid #4B6656;outline-offset:2px;border-radius:4px;}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+.skip-link:focus{position:fixed;left:1rem;top:1rem;z-index:100;width:auto;height:auto;padding:0.75rem 1rem;background:#4B6656;color:#fff;border-radius:9999px;font-size:0.875rem;font-weight:700;}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.table-wrap table{min-width:640px;}
+</style>
 </head>
 <body class="font-sans antialiased">
 
-<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4">
+
+<a href="#main" class="skip-link">本文へスキップ</a>
+<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4" aria-label="メインナビゲーション">
   <div class="max-w-6xl mx-auto flex justify-between items-center">
     <a href="index.html" class="flex items-center gap-2">
-      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold">A</span>
+      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold" aria-hidden="true">A</span>
       <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
     </a>
     <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
@@ -32,16 +51,28 @@ tailwind.config = {
       <a href="compare.html" class="navlink active hover:text-sageDeep transition-colors">比較表</a>
       <a href="news.html" class="navlink hover:text-sageDeep transition-colors">お知らせ</a>
     </div>
+    <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-sage/20 text-sageDeep hover:bg-sageLight transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden max-w-6xl mx-auto pt-3 pb-1 space-y-1 text-sm border-t border-sage/10 mt-3">
+    <a href="index.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">はじめに</a>
+    <a href="gpt-5.6.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">GPT-5.6ファミリー</a>
+    <a href="fable-5.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">Claude Fable 5</a>
+    <a href="compare.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round active">比較表</a>
+    <a href="news.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">お知らせ</a>
   </div>
 </nav>
 
+
+<main id="main">
 <header class="max-w-6xl mx-auto px-6 pt-16 pb-10 text-center">
   <h1 class="text-2xl md:text-3xl font-round font-bold text-ink">かんたん比較表</h1>
   <p class="text-ink/60 text-sm mt-3">公開されているベンチマーク（TerminalBench 2.1）と料金をもとにまとめました。</p>
 </header>
 
 <section class="max-w-6xl mx-auto px-6 py-6">
-  <div class="bg-white rounded-2xl soft-shadow border border-sage/10 overflow-hidden mb-6">
+  <div class="bg-white rounded-2xl soft-shadow border border-sage/10 overflow-hidden mb-6 table-wrap">
     <table class="w-full text-left text-sm">
       <thead>
         <tr class="bg-sageLight text-sageDeep font-round text-xs uppercase tracking-wide">
@@ -109,6 +140,7 @@ tailwind.config = {
   </div>
 </section>
 
+</main>
 <footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
     <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
@@ -117,6 +149,27 @@ tailwind.config = {
     </div>
   </div>
 </footer>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn');
+  var menu=document.getElementById('mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(){
+    var open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','メニューを開く');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
