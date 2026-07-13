@@ -1,183 +1,632 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OpenAIのGPT-5.6ファミリーとAnthropicのClaude Fable 5 / Mythos 5を、公開情報をもとにやさしい言葉で紹介する案内ページです。">
-<meta name="theme-color" content="#6E8F79">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AIのふたつの個性 ― GPT-5.6ファミリーとClaude Fable 5のご案内">
-<meta property="og:description" content="OpenAIのGPT-5.6ファミリーとAnthropicのClaude Fable 5 / Mythos 5を、公開情報をもとにやさしい言葉で紹介する案内ページです。">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5.6 vs Claude Fable 5 — AIのふたつの個性 | 2026年最新</title>
+    <meta name="description" content="OpenAIのGPT-5.6ファミリー（Sol・Terra・Luna）とAnthropicのClaude Fable 5 / Mythos 5の違いを、料金・ベンチマーク・得意分野・おすすめの使い方でわかりやすく比較。">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GPT-5.6 vs Claude Fable 5 — AIのふたつの個性 | 2026年最新">
+    <meta property="og:description" content="OpenAIのGPT-5.6ファミリーとAnthropicのClaude Fable 5を、料金・ベンチマーク・得意分野で正直に比較。">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='48' font-family='system-ui' font-weight='700' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
 
-<title>AIのふたつの個性 ― GPT-5.6ファミリーとClaude Fable 5のご案内</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-  theme: { extend: {
-    fontFamily: { sans: ['Noto Sans JP','sans-serif'], round: ['Zen Maru Gothic','sans-serif'] },
-    colors: { cream:'#FBF8F2', sage:'#6E8F79', sageLight:'#E8EFE7', sageDeep:'#4B6656', ink:'#3F3B36', clay:'#C98B5E' }
-  }}
-}
-</script>
-<style>
-body{background-color:#FBF8F2;color:#3F3B36;}
-.soft-shadow{box-shadow:0 8px 30px rgba(75,102,86,0.08);}
-.navlink.active{color:#4B6656;font-weight:700;}
-html{scroll-behavior:smooth;}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
-a:focus-visible,button:focus-visible{outline:2px solid #4B6656;outline-offset:2px;border-radius:4px;}
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
-.skip-link:focus{position:fixed;left:1rem;top:1rem;z-index:100;width:auto;height:auto;padding:0.75rem 1rem;background:#4B6656;color:#fff;border-radius:9999px;font-size:0.875rem;font-weight:700;}
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-.table-wrap table{min-width:640px;}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
-</style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .comparison-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .feature-row {
+            transition: background-color 0.1s ease;
+        }
+
+        .feature-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 1px 0 0 rgb(0 0 0 / 0.05);
+        }
+
+        .honest-note {
+            font-size: 0.875rem;
+            color: #64748b;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 1rem;
+        }
+
+        .model-badge {
+            background: linear-gradient(90deg, #1e2937, #0f172a);
+            color: white;
+            padding: 0.125rem 0.625rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .comparison-card:hover { transform: none; }
+        }
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 2px solid #0f172a;
+            outline-offset: 2px;
+        }
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus {
+            position: fixed;
+            left: 1rem;
+            top: 1rem;
+            z-index: 100;
+            width: auto;
+            height: auto;
+            padding: 0.75rem 1rem;
+            background: #0f172a;
+            color: #fff;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table-wrap table { min-width: 720px; }
+        @media (max-width: 640px) {
+            .section-header { font-size: 1.75rem; }
+        }
+        details summary { list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+    </style>
 </head>
-<body class="font-sans antialiased">
+<body class="bg-slate-50 text-slate-900">
+    <a href="#main" class="skip-link">本文へスキップ</a>
 
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50" aria-label="メインナビゲーション">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-16 gap-3">
+                <a href="#main" class="flex items-center gap-x-3 min-w-0">
+                    <div class="w-9 h-9 bg-black rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+                        <span class="text-white font-bold text-lg tracking-tighter">A</span>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="font-semibold text-lg sm:text-xl tracking-tight">AIのふたつの個性</span>
+                    </div>
+                </a>
 
-<a href="#main" class="skip-link">本文へスキップ</a>
-<nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage/10 px-6 py-4" aria-label="メインナビゲーション">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <a href="index.html" class="flex items-center gap-2">
-      <span class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-sage font-round font-bold" aria-hidden="true">A</span>
-      <span class="text-lg font-round font-bold text-sageDeep">AIのふたつの個性</span>
-    </a>
-    <div class="hidden md:flex space-x-8 text-sm text-ink/70 font-round">
-      <a href="index.html" class="navlink active hover:text-sageDeep transition-colors">はじめに</a>
-      <a href="gpt-5.6.html" class="navlink hover:text-sageDeep transition-colors">GPT-5.6ファミリー</a>
-      <a href="fable-5.html" class="navlink hover:text-sageDeep transition-colors">Claude Fable 5</a>
-      <a href="compare.html" class="navlink hover:text-sageDeep transition-colors">比較表</a>
-      <a href="news.html" class="navlink hover:text-sageDeep transition-colors">お知らせ</a>
-    </div>
-    <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-sage/20 text-sageDeep hover:bg-sageLight transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-  <div id="mobile-menu" class="hidden md:hidden max-w-6xl mx-auto pt-3 pb-1 space-y-1 text-sm border-t border-sage/10 mt-3">
-    <a href="index.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round active">はじめに</a>
-    <a href="gpt-5.6.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">GPT-5.6ファミリー</a>
-    <a href="fable-5.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">Claude Fable 5</a>
-    <a href="compare.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">比較表</a>
-    <a href="news.html" class="block py-3 px-2 rounded-xl hover:bg-sageLight text-ink/80 font-round">お知らせ</a>
-  </div>
-</nav>
+                <div class="hidden lg:flex items-center gap-x-1 text-sm">
+                    <a href="#comparison" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">比較表</a>
+                    <a href="#family" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">ファミリー</a>
+                    <a href="#features" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">主な違い</a>
+                    <a href="#who" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">選び方</a>
+                    <a href="#timeline" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">経緯</a>
+                    <a href="#faq" class="px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg">FAQ</a>
+                </div>
 
+                <div class="flex items-center gap-2">
+                    <a href="#who"
+                       class="hidden sm:inline-flex items-center px-4 py-2.5 bg-black text-white text-sm font-medium rounded-2xl hover:bg-slate-800 transition-all active:scale-[0.985]">
+                        自分に合うのは？
+                    </a>
+                    <button id="menu-btn" type="button"
+                            class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors"
+                            aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 pb-3">
+                <div class="flex flex-col text-sm py-2">
+                    <a href="#comparison" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">比較表</a>
+                    <a href="#family" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">ファミリー</a>
+                    <a href="#features" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">主な違い</a>
+                    <a href="#who" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">選び方</a>
+                    <a href="#timeline" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">経緯</a>
+                    <a href="#faq" class="px-3 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<main id="main">
-<header class="max-w-6xl mx-auto px-6 pt-16 pb-10">
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <span class="inline-block text-xs font-round font-bold text-sage bg-sageLight px-3 py-1 rounded-full mb-4">2026年6月〜7月 実在モデルのご紹介</span>
-      <h1 class="text-3xl md:text-4xl font-round font-bold text-ink leading-relaxed mb-5">
-        そっと寄り添う、<br>これからの人工知能のお話。
-      </h1>
-      <p class="text-ink/70 leading-loose text-[15px]">
-        OpenAIの「GPT-5.6」ファミリー（Sol・Terra・Luna）と、Anthropicの「Claude Fable 5 / Mythos 5」。
-        どちらも2026年6月に発表された、実際に存在する最新世代のモデルです。
-        公開されている一次情報をもとに、それぞれの個性や得意なことを、できるだけやさしい言葉でご紹介いたします。
-      </p>
-    </div>
-    <div class="rounded-3xl overflow-hidden soft-shadow bg-gradient-to-br from-sageLight to-white p-10 flex flex-col items-center justify-center text-center border border-sage/10">
-      <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center soft-shadow mb-4">
-        <span class="text-2xl">🌿</span>
-      </div>
-      <p class="font-round text-sageDeep font-bold text-lg mb-1">やさしく、ていねいに。</p>
-      <p class="text-ink/60 text-sm">むずかしい専門用語は、できるだけ噛みくだいてお伝えします。</p>
-    </div>
-  </div>
-</header>
+    <main id="main">
+        <!-- Hero -->
+        <div class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
+            <div class="inline-flex items-center gap-x-2 bg-white border border-slate-200 rounded-full px-4 py-1 text-sm mb-6">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" aria-hidden="true"></div>
+                <span class="text-slate-600 font-medium">2026年6〜7月 公開情報に基づく比較</span>
+            </div>
 
-<section class="max-w-6xl mx-auto px-6 py-16">
-  <div class="bg-white rounded-3xl soft-shadow border border-sage/10 p-10 md:p-14 grid md:grid-cols-3 gap-10">
-    <div class="md:col-span-2">
-      <h2 class="text-xl font-round font-bold text-sageDeep mb-5">はじめに</h2>
-      <p class="text-ink/75 leading-loose text-[15px] mb-4">
-        AIという言葉を耳にする機会が、ずいぶん増えたように思います。仕事の相談相手として、あるいは創作のパートナーとして、日々の暮らしにそっと寄り添ってくれる存在へと育ってきました。
-      </p>
-      <p class="text-ink/75 leading-loose text-[15px] mb-4">
-        このページでは、2026年6月に発表された二つの大きな流れ、OpenAIの「GPT-5.6」ファミリーと、Anthropicの「Claude Fable 5 / Mythos 5」について、公式発表などをもとにまとめています。
-      </p>
-      <p class="text-ink/75 leading-loose text-[15px]">
-        どちらも登場からまだ間もなく、提供範囲が段階的に広がっている最中のモデルです。どちらが優れているというより、それぞれに合った使い方があります。のんびりご覧いただけたら嬉しいです。
-      </p>
-    </div>
-    <div class="flex flex-col justify-center items-center bg-sageLight rounded-2xl p-6">
-      <span class="text-4xl mb-3">🤝</span>
-      <p class="text-sageDeep font-round font-bold text-sm text-center">案内人：AIのふたつの個性 編集部</p>
-      <p class="text-ink/50 text-xs text-center mt-2">2026年7月 作成・公開情報をもとに構成</p>
-    </div>
-  </div>
-</section>
+            <h1 class="section-header tracking-tighter mb-4">
+                GPT-5.6 と<br>
+                <span class="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Claude Fable 5</span><br>
+                の個性を、わかりやすく。
+            </h1>
 
-<section class="max-w-6xl mx-auto px-6 py-16">
-  <h2 class="text-2xl font-round font-bold text-ink text-center mb-10">ふたつのモデル、それぞれのお話</h2>
-  <div class="grid md:grid-cols-2 gap-8">
-    <a href="gpt-5.6.html" class="block bg-white rounded-2xl soft-shadow border border-sage/10 p-10 hover:-translate-y-1 transition-transform duration-300">
-      <span class="text-xs font-round font-bold text-clay bg-clay/10 px-3 py-1 rounded-full">OpenAI</span>
-      <h3 class="text-xl font-round font-bold text-ink mt-4 mb-3">GPT-5.6ファミリー（Sol・Terra・Luna）</h3>
-      <p class="text-ink/60 text-sm leading-relaxed mb-4">
-        2026年6月26日発表。目的に応じて選べる3段階構成で、最上位のSolはコーディングや科学分野で新記録を出しています。
-      </p>
-      <span class="text-sage text-sm font-round font-bold">くわしく見る →</span>
-    </a>
-    <a href="fable-5.html" class="block bg-white rounded-2xl soft-shadow border border-sage/10 p-10 hover:-translate-y-1 transition-transform duration-300">
-      <span class="text-xs font-round font-bold text-sage bg-sageLight px-3 py-1 rounded-full">Anthropic</span>
-      <h3 class="text-xl font-round font-bold text-ink mt-4 mb-3">Claude Fable 5 / Mythos 5</h3>
-      <p class="text-ink/60 text-sm leading-relaxed mb-4">
-        2026年6月9日発表。長時間にわたる自律作業を得意とする「Mythos級」のモデルで、7月1日に再展開されました。
-      </p>
-      <span class="text-sage text-sm font-round font-bold">くわしく見る →</span>
-    </a>
-  </div>
-</section>
+            <p class="max-w-xl mx-auto text-base sm:text-xl text-slate-600 leading-relaxed">
+                OpenAIの3段階ファミリーと、Anthropicの長時間自律モデル。どちらが優れているかではなく、どこが違うかを正直に整理しました。
+            </p>
 
-<section class="max-w-6xl mx-auto px-6 py-16">
-  <div class="bg-sageLight rounded-2xl p-8 border border-sage/10 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div>
-      <h2 class="font-round font-bold text-sageDeep text-lg mb-2">比較表もご用意しています</h2>
-      <p class="text-ink/60 text-sm">料金やベンチマークの数値を、ひと目で見比べられる表にまとめました。</p>
-    </div>
-    <a href="compare.html" class="shrink-0 px-6 py-3 rounded-full text-sm font-round font-bold bg-sage text-white hover:bg-sageDeep transition-colors">比較表を見る</a>
-  </div>
-</section>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 mt-8">
+                <a href="#comparison"
+                   class="px-8 py-3.5 bg-white border border-slate-300 hover:border-slate-400 text-slate-700 font-medium rounded-3xl transition-all inline-flex items-center justify-center gap-x-2 text-sm">
+                    <i class="fas fa-table" aria-hidden="true"></i>
+                    比較表を見る
+                </a>
+                <a href="#who"
+                   class="px-8 py-3.5 bg-black text-white font-medium rounded-3xl hover:bg-slate-800 transition-all text-sm inline-flex items-center justify-center gap-x-2">
+                    自分に合うのは？
+                </a>
+            </div>
+        </div>
 
-</main>
-<footer class="border-t border-sage/10 bg-white py-12 px-6 mt-10">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <span class="text-sm text-ink/50 font-round">© 2026 AIのふたつの個性 ご案内ページ（公開情報をもとに構成した紹介コンテンツです）</span>
-    <div class="flex gap-6 text-xs text-ink/50">
-      <a href="news.html" class="hover:text-sageDeep transition-colors">お知らせ</a>
-      <a href="compare.html" class="hover:text-sageDeep transition-colors">比較表</a>
-    </div>
-  </div>
-</footer>
+        <!-- Quick Summary Cards -->
+        <div class="max-w-5xl mx-auto px-6 pb-16">
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- GPT-5.6 -->
+                <div class="comparison-card bg-white border border-slate-200 rounded-3xl p-8">
+                    <div class="flex items-start justify-between mb-6 gap-3">
+                        <div>
+                            <div class="flex items-center gap-x-3 flex-wrap">
+                                <span class="text-2xl font-semibold tracking-tight">GPT-5.6 ファミリー</span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="text-4xl font-semibold tabular-nums tracking-tighter">3段階</span>
+                                <span class="text-slate-500 text-lg">構成</span>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-1">Sol / Terra / Luna · 2026年6月26日発表</div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <div class="model-badge text-[10px] px-3 py-1">OpenAI</div>
+                        </div>
+                    </div>
 
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between gap-3 py-1 border-b border-slate-100">
+                            <span class="text-slate-600">いちばんの強み</span>
+                            <span class="font-medium text-emerald-600 text-right">ベンチマーク・段階選択</span>
+                        </div>
+                        <div class="flex justify-between gap-3 py-1 border-b border-slate-100">
+                            <span class="text-slate-600">TerminalBench 最高</span>
+                            <span class="font-medium tabular-nums">91.9%（Sol Ultra）</span>
+                        </div>
+                        <div class="flex justify-between gap-3 py-1">
+                            <span class="text-slate-600">提供状況</span>
+                            <span class="font-medium text-amber-600 text-right">限定プレビューから段階拡大中</span>
+                        </div>
+                    </div>
 
-<script>
-(function(){
-  var btn=document.getElementById('menu-btn');
-  var menu=document.getElementById('mobile-menu');
-  if(!btn||!menu) return;
-  btn.addEventListener('click',function(){
-    var open = menu.classList.toggle('hidden') === false;
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      menu.classList.add('hidden');
-      btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-label','メニューを開く');
-    });
-  });
-})();
-</script>
+                    <div class="mt-6 pt-6 border-t text-xs text-slate-500">
+                        予算や用途に合わせて Sol・Terra・Luna を選べるのが持ち味。コーディングや科学タスクで新記録を出したと発表されています。
+                    </div>
+                </div>
 
+                <!-- Claude Fable 5 -->
+                <div class="comparison-card bg-white border-2 border-slate-900 rounded-3xl p-8 relative overflow-hidden">
+                    <div class="absolute top-6 right-6">
+                        <div class="bg-slate-900 text-white text-[10px] px-3 py-1 rounded-full font-semibold tracking-wider">MYTHOS級</div>
+                    </div>
+
+                    <div class="flex items-start justify-between mb-6 gap-3 pr-16">
+                        <div>
+                            <div class="flex items-center gap-x-3 flex-wrap">
+                                <span class="text-2xl font-semibold tracking-tight">Claude Fable 5</span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="text-4xl font-semibold tabular-nums tracking-tighter">$10</span>
+                                <span class="text-slate-500 text-lg">/ 入力MTok</span>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-1">出力 $50 / MTok · 2026年6月9日発表</div>
+                        </div>
+                        <div class="text-right shrink-0 hidden sm:block">
+                            <div class="model-badge bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-[10px] px-3 py-1">Anthropic</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between gap-3 py-1 border-b border-slate-100">
+                            <span class="text-slate-600">いちばんの強み</span>
+                            <span class="font-medium text-emerald-600 text-right">長時間の自律作業</span>
+                        </div>
+                        <div class="flex justify-between gap-3 py-1 border-b border-slate-100">
+                            <span class="text-slate-600">TerminalBench（Mythos 5）</span>
+                            <span class="font-medium tabular-nums">88.0%</span>
+                        </div>
+                        <div class="flex justify-between gap-3 py-1">
+                            <span class="text-slate-600">提供状況</span>
+                            <span class="font-medium text-emerald-600 text-right">7/1 に世界的再展開</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t">
+                        <div class="text-xs text-slate-500">
+                            「Mythos級」能力を安全に一般公開できるよう調整したモデル。長時間のコーディング移行や視覚＋記憶を使う作業で強みを発揮します。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div id="comparison" class="max-w-5xl mx-auto px-6 pb-20">
+            <div class="mb-8">
+                <h2 class="text-3xl font-semibold tracking-tight">スペック比較表</h2>
+                <p class="text-slate-600 mt-2">公開ベンチマーク（TerminalBench 2.1）と料金を、ひと目で見比べられる形に整理</p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm table-wrap">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-200 bg-slate-50">
+                            <th class="text-left px-6 sm:px-8 py-5 font-medium text-slate-500 w-1/4">項目</th>
+                            <th class="px-4 sm:px-6 py-5 font-medium text-center">GPT-5.6 側</th>
+                            <th class="px-4 sm:px-6 py-5 font-medium text-center bg-slate-900 text-white">Claude 側</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">代表モデル</td>
+                            <td class="px-4 sm:px-6 py-4 text-center">Sol / Terra / Luna<br><span class="text-xs text-slate-400">（Sol Ultra 含む）</span></td>
+                            <td class="px-4 sm:px-6 py-4 text-center font-medium bg-amber-50">Fable 5 / Mythos 5</td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">開発元</td>
+                            <td class="px-4 sm:px-6 py-4 text-center">OpenAI</td>
+                            <td class="px-4 sm:px-6 py-4 text-center bg-amber-50">Anthropic</td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">TerminalBench 2.1</td>
+                            <td class="px-4 sm:px-6 py-4 text-center tabular-nums">
+                                Sol Ultra 91.9%<br>
+                                Sol 88.8% · Terra 84.3% · Luna 82.5%
+                            </td>
+                            <td class="px-4 sm:px-6 py-4 text-center bg-amber-50 tabular-nums">
+                                Mythos 5 88.0%<br>
+                                <span class="text-xs text-slate-500">Fable 5 は同基盤・数値未公表</span>
+                            </td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">料金（入力／出力）</td>
+                            <td class="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm">
+                                Sol $5 / $30<br>
+                                Terra $2.5 / $15<br>
+                                Luna $1 / $6
+                                <div class="text-xs text-slate-400 mt-1">100万トークンあたり</div>
+                            </td>
+                            <td class="px-4 sm:px-6 py-4 text-center font-semibold bg-amber-50">
+                                $10 / $50
+                                <div class="text-xs text-amber-700 font-normal mt-1">Fable / Mythos 共通</div>
+                            </td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">設計の発想</td>
+                            <td class="px-4 sm:px-6 py-4 text-center">目的・予算で段階選択<br><span class="text-xs text-slate-400">max effort / ultra モード</span></td>
+                            <td class="px-4 sm:px-6 py-4 text-center bg-amber-50">長時間の自律実行<br><span class="text-xs text-slate-500">安全のためのルーティング付き</span></td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">提供範囲</td>
+                            <td class="px-4 sm:px-6 py-4 text-center">限定プレビュー → 段階的拡大</td>
+                            <td class="px-4 sm:px-6 py-4 text-center bg-amber-50">一般向け Fable / 限定 Mythos<br><span class="text-xs text-slate-500">7/1 再展開</span></td>
+                        </tr>
+                        <tr class="feature-row">
+                            <td class="px-6 sm:px-8 py-4 font-medium text-slate-700">参考：前世代</td>
+                            <td class="px-4 sm:px-6 py-4 text-center">GPT-5.5 など</td>
+                            <td class="px-4 sm:px-6 py-4 text-center bg-amber-50">Opus 4.8（TB 78.9%）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="honest-note mt-4 text-xs">
+                ※ TerminalBench 2.1 のスコアは OpenAI の発表資料に基づく数値です。両社の測定条件が同一でない可能性があります。料金・提供範囲は公開情報時点の目安です。
+            </div>
+        </div>
+
+        <!-- Family tiers -->
+        <div id="family" class="max-w-5xl mx-auto px-6 pb-16">
+            <h2 class="text-3xl font-semibold tracking-tight mb-3">GPT-5.6 ファミリーを深掘り</h2>
+            <p class="text-slate-600 mb-8 max-w-2xl">ひとつの AI ではなく、目的と予算に応じて選べる 3 段階構成。米国政府との調整のもと、当初は限定パートナー向けプレビューから始まりました。</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center font-semibold mb-4">S</div>
+                    <h3 class="font-semibold text-lg mb-2">GPT-5.6 Sol</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        フラッグシップ。TerminalBench 2.1 で 88.8%（Sol Ultra は 91.9%）。本格的なコーディングや複雑な調査向け。max reasoning effort と ultra モードに対応。
+                    </p>
+                    <div class="text-xs text-slate-500 border-t border-slate-100 pt-4 space-y-1">
+                        <p>料金：入力 $5 / 出力 $30（/MTok）</p>
+                        <p>向き：重い開発・調査</p>
+                    </div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 text-white flex items-center justify-center font-semibold mb-4">T</div>
+                    <h3 class="font-semibold text-lg mb-2">GPT-5.6 Terra</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        実用派。前世代 GPT-5.5 と同等以上を、おおよそ半分のコストで。TerminalBench 2.1 は 84.3%。日常業務の自動化に向きます。
+                    </p>
+                    <div class="text-xs text-slate-500 border-t border-slate-100 pt-4 space-y-1">
+                        <p>料金：入力 $2.5 / 出力 $15（/MTok）</p>
+                        <p>向き：日常の業務自動化</p>
+                    </div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="w-10 h-10 rounded-full bg-slate-500 text-white flex items-center justify-center font-semibold mb-4">L</div>
+                    <h3 class="font-semibold text-lg mb-2">GPT-5.6 Luna</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        いちばん手頃。TerminalBench 2.1 は 82.5% と前世代 GPT-5.5（83.4%）にはわずかに届きませんが、価格の手軽さが持ち味です。
+                    </p>
+                    <div class="text-xs text-slate-500 border-t border-slate-100 pt-4 space-y-1">
+                        <p>料金：入力 $1 / 出力 $6（/MTok）</p>
+                        <p>向き：軽い会話・下支え</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-6 bg-white border border-slate-200 rounded-3xl text-sm text-slate-600 leading-relaxed">
+                <span class="font-medium text-slate-900">安全面の補足：</span>
+                Sol はサイバー関連でも高い能力を示す一方、OpenAI の Preparedness Framework で「Cyber Critical」閾値には達していないとされています。防御支援を後押ししつつ、悪用を防ぐ多層的な安全対策が組み込まれています。
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div id="features" class="max-w-5xl mx-auto px-6 pb-16">
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">主な違いを深掘り</h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="text-emerald-600 mb-3"><i class="fas fa-robot text-2xl" aria-hidden="true"></i></div>
+                    <h3 class="font-semibold text-lg mb-2">段階選択 vs 自律長時間</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        GPT-5.6 は Sol / Terra / Luna で「どれだけ本気で考えさせるか」を選べます。Fable 5 は細かい指示を待たず、長時間の作業をひとりで進める設計が際立ちます。
+                    </p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="text-emerald-600 mb-3"><i class="fas fa-shield-alt text-2xl" aria-hidden="true"></i></div>
+                    <h3 class="font-semibold text-lg mb-2">Fable の安全ルーティング</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        サイバー・生物化学・不正な模倣（distillation）などの問い合わせは、自動的に前モデル Opus 4.8 へ振り替え。働くのは全体の 5% 未満とされ、残りは Fable 本来の力を使います。
+                    </p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="text-emerald-600 mb-3"><i class="fas fa-flask text-2xl" aria-hidden="true"></i></div>
+                    <h3 class="font-semibold text-lg mb-2">現場での報告例</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Stripe では大規模 Ruby 移行を短時間で終えたとの報告。視覚だけでゲームを進めたり、Mythos 5 では生命科学・サイバー防衛の限定提供でも成果が語られています。
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <h3 class="font-semibold text-lg mb-2">Claude Fable 5 とは</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Anthropic が「Mythos級」と呼ぶ最高能力クラスを、一般公開できるよう安全側に調整したモデルです。同じ基盤の制限をゆるめた Mythos 5 は、協力先や防衛・研究用途に限定されています。
+                    </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <h3 class="font-semibold text-lg mb-2">ざっくり言うと</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        コマンドライン系ベンチだけ見ると Sol（特に Ultra）がやや優位に見えます。一方 Fable 5 は数日単位の自律コーディングや、視覚・長期記憶を使う作業で強みを発揮する、という整理がしっくりきます。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Who -->
+        <div id="who" class="bg-white border-t border-b border-slate-200 py-16">
+            <div class="max-w-5xl mx-auto px-6">
+                <h2 class="text-3xl font-semibold tracking-tight mb-10">どちらを意識すべき？</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="uppercase tracking-[1.5px] text-xs font-semibold text-emerald-600 mb-3">GPT-5.6 ファミリーが向く人</div>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex gap-x-3"><i class="fas fa-check text-emerald-500 mt-1" aria-hidden="true"></i> <span>用途ごとに「本気度」とコストを切り替えたい</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-emerald-500 mt-1" aria-hidden="true"></i> <span>コーディング・調査でベンチ寄りに強いモデルが欲しい</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-emerald-500 mt-1" aria-hidden="true"></i> <span>max effort / ultra のような明示的モードが好み</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-emerald-500 mt-1" aria-hidden="true"></i> <span>Luna〜Sol まで価格帯を幅広く使いたい</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="uppercase tracking-[1.5px] text-xs font-semibold text-amber-600 mb-3">Claude Fable 5 が向く人</div>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex gap-x-3"><i class="fas fa-check text-amber-600 mt-1" aria-hidden="true"></i> <span>長時間・大規模なコード移行や自律タスクを任せたい</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-amber-600 mt-1" aria-hidden="true"></i> <span>視覚情報やメモを伴う長い作業が多い</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-amber-600 mt-1" aria-hidden="true"></i> <span>Claude.ai / Claude Code / API の流れで使いたい</span></li>
+                            <li class="flex gap-x-3"><i class="fas fa-check text-amber-600 mt-1" aria-hidden="true"></i> <span>研究・防衛など限定チャネルの Mythos 系に関心がある</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-6 bg-slate-50 border border-slate-200 rounded-3xl text-sm">
+                    <div class="font-medium mb-2 flex items-center gap-x-2">
+                        <i class="fas fa-info-circle text-slate-400" aria-hidden="true"></i>
+                        <span>正直なところ</span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed">
+                        どちらが「勝ち」というより、設計思想が違います。数値で比較しやすいのが GPT-5.6 ファミリー、長く並走して仕事を進める感が強いのが Fable 5、という見方が分かりやすいです。提供範囲もまだ動いている最中なので、実際に触れる環境がある方から試すのが安全です。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline" class="max-w-5xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-semibold tracking-tight mb-3">これまでの経緯</h2>
+            <p class="text-slate-600 mb-8">2026年、両モデルにまつわる主な出来事（公開情報ベース）</p>
+
+            <div class="space-y-3">
+                <div class="bg-white border border-slate-200 rounded-2xl px-5 py-4 flex gap-4 items-start">
+                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full shrink-0">2026.07.01</span>
+                    <p class="text-sm text-slate-600">Claude Fable 5 / Mythos 5 が世界的に再展開。Anthropic は業界横断のジェイルブレイク評価基準づくりも提案。</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl px-5 py-4 flex gap-4 items-start">
+                    <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-full shrink-0">2026.06.26</span>
+                    <p class="text-sm text-slate-600">OpenAI が GPT-5.6 Sol・Terra・Luna を発表。当初は限定パートナーへの提供。</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl px-5 py-4 flex gap-4 items-start">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1 rounded-full shrink-0">2026.06.12</span>
+                    <p class="text-sm text-slate-600">Claude Fable 5 / Mythos 5 へのアクセスが一時停止。復旧対応が進められた。</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl px-5 py-4 flex gap-4 items-start">
+                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full shrink-0">2026.06.09</span>
+                    <p class="text-sm text-slate-600">Anthropic が Claude Fable 5（一般向け・安全対策）と Mythos 5（制限をゆるめた限定提供）を発表。</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl px-5 py-4 flex gap-4 items-start">
+                    <span class="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-full shrink-0">2026.04</span>
+                    <p class="text-sm text-slate-600">Project Glasswing 経由で Mythos-class の初期版（Claude Mythos Preview）を限定のサイバー防衛関係者へ提供開始。</p>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 text-center mt-6">※日付・内容は各社の公式発表や報道をもとにした要約です。今後更新される可能性があります。</p>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faq" class="max-w-5xl mx-auto px-6 pb-16">
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">よくある質問</h2>
+
+            <div class="space-y-4">
+                <details class="group bg-white border border-slate-200 rounded-3xl px-7 py-5">
+                    <summary class="font-medium cursor-pointer flex justify-between items-center gap-3">
+                        GPT-5.6 はもう一般ユーザーも使える？
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180 text-slate-400 shrink-0" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
+                        発表時点では限定プレビューから始まり、提供範囲が段階的に広げられている状態です。お住まいの地域・契約・パートナー経由かどうかでアクセス可否が変わります。
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-slate-200 rounded-3xl px-7 py-5">
+                    <summary class="font-medium cursor-pointer flex justify-between items-center gap-3">
+                        Fable 5 と Mythos 5 の違いは？
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180 text-slate-400 shrink-0" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
+                        同じ Mythos 級の基盤に近い一方、Fable 5 は一般向けに安全側へ調整されています。Mythos 5 は制限をゆるめた版で、防衛・研究などの限定チャネル向けです。料金はどちらも入力 $10 / 出力 $50（100万トークンあたり）とされています。
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-slate-200 rounded-3xl px-7 py-5">
+                    <summary class="font-medium cursor-pointer flex justify-between items-center gap-3">
+                        ベンチマークだけで選んで大丈夫？
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180 text-slate-400 shrink-0" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
+                        TerminalBench はコマンドライン操作の一指標です。長時間の自律作業や視覚・記憶を使うタスクでは並びが変わる可能性があります。用途に近いタスクで試すのがいちばん確実です。
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-slate-200 rounded-3xl px-7 py-5">
+                    <summary class="font-medium cursor-pointer flex justify-between items-center gap-3">
+                        6月中旬に Fable が使えなくなったのはなぜ？
+                        <i class="fas fa-chevron-down transition-transform group-open:rotate-180 text-slate-400 shrink-0" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-slate-600 leading-relaxed pl-1">
+                        2026年6月12日前後にアクセスが一時停止され、7月1日に世界的に再展開された、という経緯が公開情報としてまとまっています。詳細な原因説明は公式発表の範囲に依存します。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="max-w-5xl mx-auto px-6 py-12 text-center">
+            <p class="text-slate-600 mb-6">公開情報をもとに構成した紹介コンテンツです。<br class="hidden sm:inline">実際の仕様・料金・提供範囲は公式の発表をご確認ください。</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="#comparison"
+                   class="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-3xl font-medium hover:bg-slate-800 transition-all">
+                    比較表をもう一度見る
+                </a>
+                <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                        class="inline-flex items-center justify-center px-8 py-4 border border-slate-300 hover:bg-slate-50 rounded-3xl font-medium transition-all">
+                    ページ上部へ
+                </button>
+            </div>
+
+            <div class="mt-10 text-xs text-slate-400">
+                © 2026 AIのふたつの個性 · 2026年7月時点の公開情報をもとに構成<br>
+                OpenAI / Anthropic 各社の商標は各社に帰属します。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () {
+                    var open = menu.classList.toggle('hidden') === false;
+                    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+                });
+                menu.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        menu.classList.add('hidden');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.setAttribute('aria-label', 'メニューを開く');
+                    });
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener('click', function (e) {
+                    var id = this.getAttribute('href');
+                    if (!id || id === '#') return;
+                    var target = document.querySelector(id);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        history.replaceState(null, '', id);
+                    }
+                });
+            });
+
+            var nav = document.querySelector('nav');
+            window.addEventListener('scroll', function () {
+                if (!nav) return;
+                if (window.scrollY > 10) {
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.remove('nav-scrolled');
+                }
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
